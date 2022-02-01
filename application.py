@@ -1,9 +1,11 @@
 from flask import Flask, render_template,request
+from flask_cors import CORS
 import pandas as pd
 import pickle
 import numpy as np
 
 app=Flask(__name__)
+CORS(app)
 car=pd.read_csv("Cleaned_car.csv")
 model = pickle.load(open("LinearRegressionModel.pkl",'rb'))
 
